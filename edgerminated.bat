@@ -13,19 +13,19 @@ if %errorLevel% neq 0 (
 goto :init
 
 :init
-title EDGERMINATED *EDGE & IE UNINSTALLER*
+title EDGERMINATED ¨*[EDGE & IE UNINSTALLER#]*
 call :logo
 
 echo -- Help
-echo If you can't uninstall Edge or Internet Explorer with this program, use the "> ltk msedgewebview2" option to kill msedgewebview2, preventing errors while deleting the Microsoft Edge folder. [use a TrustedInstaller hack too]
+echo If you can't uninstall Edge or Internet Explorer with this program, use the "+ ltk msedgewebview2" option to kill msedgewebview2, preventing errors while deleting the Microsoft Edge folder. [use a TrustedInstaller hack too]
 
 echo]
 echo]
-echo > ltk msedgewebview2 [1]
-echo > Uninstall MS Edge [2]
-echo > Uninstall Internet Explorer [3]
-echo > Uninstall Both [4]
-echo > Exit. [5]
+echo + ltk msedgewebview2 [1]
+echo + Uninstall MS Edge [2]
+echo + Uninstall Internet Explorer [3]
+echo + Uninstall Both [4]
+echo + Exit. [5]
 
 set selection=
 set /P selection=Choose an option: 
@@ -59,7 +59,7 @@ taskkill /F /IM msedgewebview2.exe
 echo Uninstalling Microsoft Edge...
 
 REM Attempting to uninstall Microsoft Edge via official method
-cd "%ProgramFiles(x86)%\Microsoft\Edge\Application\*\Installer"
+cd "%ProgramFiles(x86)%\Microsoft\Edge\Application\#\Installer"
 setup.exe --uninstall --system-level --verbose-logging --force-uninstall
 
 REM Delete the Edge folder manually if the uninstallation fails
@@ -105,10 +105,9 @@ goto :init
 exit
 
 :logo
-echo    8888888-888888-  888888- 8888888-888888- 888-   888-88-888-   88- 88888-  88888888-8888888-888888- 
-echo    88------88---88-88------ 88------88---88-8888- 8888-88-8888-  88-88---88----88----88------88---88-
-echo    88888-  88-  88-88-  888-88888-  888888--88-8888-88-88-88-88- 88-8888888-   88-   88888-  88-  88-
-echo    88----  88-  88-88-   88-88----  88---88-88--88--88-88-88--88-88-88---88-   88-   88----  88-  88-
-echo    8888888-888888---888888--8888888-88-  88-88- --- 88-88-88- -8888-88-  88-   88-   8888888-888888--
-echo    ---------------  ------- -----------  ------     ---------  --------  ---   ---   --------------- 
-
+echo    #######"######"  ######" #######"######" ###"   ###"##"###"   ##" #####"  ########"#######"######" 
+echo    ##""""""##"""##"##"""""" ##""""""##"""##"####" ####"##"####"  ##"##"""##""""##""""##""""""##"""##"
+echo    #####"  ##"  ##"##"  ###"#####"  ######""##"####"##"##"##"##" ##"#######"   ##"   #####"  ##"  ##"
+echo    ##""""  ##"  ##"##"   ##"##""""  ##"""##"##""##""##"##"##""##"##"##"""##"   ##"   ##""""  ##"  ##"
+echo    #######"######"""######""#######"##"  ##"##" """ ##"##"##" "####"##"  ##"   ##"   #######"######""
+echo    """""""""""""""  """"""" """""""""""  """"""     """""""""  """"""""  """   """   """"""""""""""" 
