@@ -55,6 +55,7 @@ pause
 goto :init
 
 :unins_edge
+cls
 taskkill /F /IM msedgewebview2.exe
 echo Uninstalling Microsoft Edge...
 
@@ -74,6 +75,7 @@ pause
 goto :init
 
 :unins_ie
+cls
 echo Uninstalling Internet Explorer...
 
 REM Remove Internet Explorer from Program Files (x86)
@@ -102,6 +104,9 @@ pause
 goto :init
 
 :exit
+cls
+echo Have a good day <3
+pause >nul
 exit
 
 :logo
