@@ -13,7 +13,7 @@ if %errorLevel% neq 0 (
 goto :init
 
 :init
-title EDGERMINATED ¨*[EDGE & IE UNINSTALLER#]*
+title EDGERMINATED ¨*[EDGE AND IE UNINSTALLER]*
 call :logo
 
 echo -- Help
