@@ -1,14 +1,23 @@
 @echo off
+color 0A
 cd /d "%ProgramFiles(x86)%"
+
+REM Check for administrator privileges
+net session >nul 2>&1
+if %errorLevel% neq 0 (
+    echo Requesting administrative privileges...
+    powershell -Command "Start-Process '%~f0' -Verb runAs"
+    exit
+)
+
 goto :init
 
 :init
-title EDGERMINATER *EDGE & IE UNINSTALLER*
+title EDGERMINATED *EDGE & IE UNINSTALLER*
 call :logo
 
 echo -- Help
 echo If you can't uninstall Edge or Internet Explorer with this program, use the "> ltk msedgewebview2" option to kill msedgewebview2, preventing errors while deleting the Microsoft Edge folder. [use a TrustedInstaller hack too]
-echo RUN THIS AS A ADMINISTRATOR!!
 
 echo]
 echo]
@@ -26,13 +35,14 @@ IF /I '%selection%' == '2' GOTO :unins_edge
 IF /I '%selection%' == '3' GOTO :unins_ie
 IF /I '%selection%' == '4' GOTO :unins_both
 IF /I '%selection%' == '5' GOTO :exit
+IF /I '%selection%' == '420' GOTO :secret
 
 echo Invalid option, try again.
 goto :init
 
 :secret
 cls
-echo Woah, you actually found me!
+echo haha funny number go brrrrrrrr
 pause
 goto :init
 
@@ -95,9 +105,10 @@ goto :init
 exit
 
 :logo
-echo    8888888-888888-  888888- 8888888-888888- 888-   888-88-888-   88- 88888- 88888888-8888888-888888- 
+echo    8888888-888888-  888888- 8888888-888888- 888-   888-88-888-   88- 88888-  88888888-8888888-888888- 
 echo    88------88---88-88------ 88------88---88-8888- 8888-88-8888-  88-88---88----88----88------88---88-
 echo    88888-  88-  88-88-  888-88888-  888888--88-8888-88-88-88-88- 88-8888888-   88-   88888-  88-  88-
 echo    88----  88-  88-88-   88-88----  88---88-88--88--88-88-88--88-88-88---88-   88-   88----  88-  88-
 echo    8888888-888888---888888--8888888-88-  88-88- --- 88-88-88- -8888-88-  88-   88-   8888888-888888--
 echo    ---------------  ------- -----------  ------     ---------  --------  ---   ---   --------------- 
+
